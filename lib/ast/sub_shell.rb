@@ -60,7 +60,7 @@ nf = frames._clone
       close_redirs closers
     klone.ios.pop
       frames[:exit_status] = result
-      result
+      return result
     end
   end
 
