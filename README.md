@@ -39,12 +39,6 @@ in later Ruby versions.  Pattern matching was introduced in Ruby 2.7 as an exper
 feature. It was improved in Ruby 3.0. This version of Vier/Vish was tested in
 in Ruby version 3.1.2.
 
-Note 2 about  Ruby versions:
-
-There is an  undiagnosed problem with  using  Ruby  versions later than 3.1.
-As of the release Viper 2.0.14, please use Ruby versions  <= 3.1.2
-or >= than  2.7
-
 
 ## Note on terminal emulators for use with Viper.
 
