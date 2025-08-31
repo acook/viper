@@ -6,7 +6,7 @@ class BufReader
   end
 
   def read
-    result = ''
+    result = String.new
     node = @io
     until node.nil?
       result << node['line'].string

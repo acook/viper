@@ -33,7 +33,7 @@ class Lexer
     unless [" ", "\t"].member?(at)
       return false
     end
-    result = ''
+    result = String.new
     while @cursor < @fin
       if @source[@cursor] == ' ' or @source[@cursor] == "\t"
         result << @source[@cursor]
@@ -47,7 +47,7 @@ class Lexer
 
   def comment
   return false unless (at == '#')
-  result = ''
+  result = String.new
 
   while @cursor < @fin
     if @source[@cursor] == '#'

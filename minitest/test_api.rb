@@ -34,11 +34,11 @@ class ArrayExtenderTests < MiniTest::Test
     assert_not_empty l
   end
   def test_regexify_returns_regexp_class
-    result = regexify 'a'
+    result = regexify 'a'.dup
     assert_is result, Regexp
   end
   def test_regexify_w_pattern_matches_input
-    result = regexify 'cat'
+    result = regexify 'cat'.dup
     assert(!!'cat'.match(result))
   end
   def test_rangify

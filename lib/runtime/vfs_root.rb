@@ -102,7 +102,7 @@ class VFSRoot
     !start[elements[0]].nil?
   end
 
-  def creat(path, object = StringIO.new(''))
+  def creat(path, object = StringIO.new())
     start, *elements = path_to_elements path
     my_node = node(elements[0..-2], start)
     my_node[elements[-1]] = object

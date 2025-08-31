@@ -8,7 +8,7 @@ end
 
 class RedirectionTest  < MiniTest::Test
   def setup
-    @target = ->(env:, frames:) { 'xxyyzz' }
+    @target = ->(env:, frames:) { 'xxyyzz'.dup }
     @ios = FrameStack.new
     @frames = FrameStack.new
     @frames[:ifs] = ' '

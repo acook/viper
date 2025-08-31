@@ -5,6 +5,9 @@ require_relative 'test_helper'
 class BlankableTests < MiniTest::Test
   def mk_obj &blk
     obj = yield
+    if obj.frozen?
+      obj = obj.dup
+    end
     obj.extend Blankable
     obj
   end
@@ -14,12 +17,12 @@ class BlankableTests < MiniTest::Test
     assert obj.blank?
   end
   def test_true_if_empty
-    obj = ''
+    obj = ''.dup
     obj.extend Blankable
     assert obj.blank?
   end
   def test_true_if_only_contains_white_space
-    obj = '     '
+    obj = '     '.dup
     obj.extend Blankable
     assert obj.blank?
   end
@@ -32,7 +35,7 @@ class BlankableTests < MiniTest::Test
     assert_false obj.blank?
   end
   def test_false_when_not_empty
-    obj = mk_obj { 'hello' }
+    obj = mk_obj { 'hello'.dup }
         assert_false obj.blank?
   end
   # In Ruby 3.0 Ranges are frozen and cannot be extended
