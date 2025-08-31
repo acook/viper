@@ -6,7 +6,7 @@ source "https://rubygems.org"
 # gem 'kpeg', '1.1.0'
 gem 'mdl', '~> 0.12.0'
 # these gems are needed for runtime, and testing
-gem 'remedy', '0.2.0'
+gem 'remedy', '~> 0.5.0'
 gem 'pry'
 gem 'reline', '0.3.2'
 #gem 'redcarpet'
