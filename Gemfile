@@ -23,5 +23,7 @@ if RUBY_VERSION > '3.4.0'
   gem 'fiddle'
 end
 
+gem 'minitest'
+
 # This gem is only used to generate documentation
 gem 'yard'

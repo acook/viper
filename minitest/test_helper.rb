@@ -38,6 +38,11 @@ def boot_etc
   vm
 end
 
+if !defined?(MiniTest)
+  require 'minitest'
+  MiniTest = Minitest
+end
+
 # add nothing further than the next line
 require 'minitest/autorun'
 
