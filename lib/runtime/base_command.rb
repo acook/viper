@@ -23,10 +23,10 @@ class BaseCommand < BinCommand::NixCommand
 
   def args_parse!(args)
     @options = {}
-    args.select { |e| e =~ /^\-.+/ }
+    args.select { |e| e.respond_to?(:=~) && e =~ /^\-.+/ }
         .map { |e| e[1..-1].to_sym }
         .each { |e| @options[e] = true }
-    args.reject { |e| e =~ /^\-.+/ }
+    args.reject { |e| e.respond_to?(:=~) && e =~ /^\-.+/ }
   end
 
   def message(*phrases, stream:, env:, sep:)
